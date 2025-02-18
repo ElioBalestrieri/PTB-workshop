@@ -30,3 +30,24 @@
 *.exe
 *.out
 *.app
+
+# Datafiles
+*.csv
+*.xls
+*.tsv
+*.asv
+
+# Media & Images
+*.jpg
+*.wav
+*.mov
+*.bmp
+*.avi
+*.wmv
+*.psv
+
+# Miscellaneous
+*.pcl
+*.sce
+
+
