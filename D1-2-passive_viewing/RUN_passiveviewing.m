@@ -1,13 +1,27 @@
 clearvars; sca; clc
 
-
+% parameters definition
 P = passiveviewing_doparams();
 
-screens = Screen('Screens');
+% start defining the Experiment structure (E) from the ptb (Psychtoolbox)
+% subfield
+E.ptb = start_ptb(P);
 
-% Define black and white
-white = WhiteIndex(max(screens));
-black = BlackIndex(max(screens));
-grey = white / 2;
+% main experiment struct
 
-[window, windowRect] = PsychImaging('OpenWindow', 0, grey);
+for iBlock = 1
+
+    E.iBlock = iBlock;
+    for iTrl = 1:6
+
+        E.iTrl = iTrl;
+
+        E = passiveviewing_dotrial(P, E);
+
+
+    end
+
+end
+
+
+sca
