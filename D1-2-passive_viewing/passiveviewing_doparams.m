@@ -8,7 +8,7 @@ P.timeFace = .5;
 P.debugRect = [0, 0, 960, 540];
 
 % load images as RGB matrices & assign them to their filenames in a P cell
-input_dir = 'stims';
+input_dir = '/home/balestrieri/Projects/PTB-workshop/stims/D1-2'; % remember to change for the current machine
 fulllist = dir(input_dir); filelist = {fulllist(~[fulllist.isdir]).name}';
 nImages = length(filelist); % length yields the number of entries along the longest dimension, use it cautiously with matrices...
 for iFace = 1:nImages

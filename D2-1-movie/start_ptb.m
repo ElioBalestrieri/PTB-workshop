@@ -7,13 +7,6 @@ ptb.white = WhiteIndex(max(screens));
 ptb.black = BlackIndex(max(screens));
 ptb.grey = ptb.white/2; 
 
-% EXERCISE: we define grey as the midway between black (0) and white (255)
-% how do we know that this is the correct background of our images? How do
-% we make the background adherent to the images? Do we have to cut all of
-% them with photoshop?
-
-% HINT: when loading the images, go look in the data matrix...
-
 %
 [ptb.win, ptb.winRect] = PsychImaging('OpenWindow', max(screens), ptb.grey, P.debugRect);
 [ptb.cntr.X, ptb.cntr.Y] = RectCenter(ptb.winRect);
@@ -29,6 +22,20 @@ ptb.keys.y = KbName('y');
 ptb.keys.m = KbName('m');
 ptb.keys.ESC = KbName('ESCAPE');
 ptb.keys.SPACE = KbName('SPACE');
+
+% [movie, movieduration, fps, imgw, imgh, ~, ~, hdrStaticMetaData] = Screen('OpenMovie', win, moviename, [], preloadsecs, [], pixelFormat, maxThreads, movieOptions);
+
+% Open movie file and retrieve basic info about movie:
+[movie, movieduration, fps, ...
+ imgw, imgh, ~, ~, ...
+ hdrStaticMetaData] = Screen('OpenMovie', ptb.win, P.moviename);
+
+ptb.movie.movie = movie;
+ptb.movie.duration = movieduration;
+ptb.movie.fps = fps;
+ptb.movie.imgw = imgw;
+ptb.movie.imgh = imgh;
+ptb.movie.hdrStaticMetaData = hdrStaticMetaData;
 
 
 

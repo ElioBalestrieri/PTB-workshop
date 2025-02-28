@@ -1,7 +1,9 @@
 clearvars; sca; clc
 
+P.movietype = input('which movie? [1/2]: ');
+
 % parameters definition
-P = passiveviewing_doparams();
+P = movie_doparams(P);
 
 % start defining the Experiment structure (E) from the ptb (Psychtoolbox)
 % subfield
@@ -16,8 +18,9 @@ for iBlock = 1
 
         E.iTrl = iTrl;
 
-        E = passiveviewing_dotrial(P, E);
+        E = movie_dotrial(P, E);
 
+        disp(iTrl)
 
     end
 
