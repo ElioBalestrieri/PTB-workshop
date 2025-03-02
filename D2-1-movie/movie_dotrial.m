@@ -26,7 +26,10 @@ nframes = 0;
 % while nframes<38
 
 
-while (GetSecs()-t1)<(E.ptb.movie.duration-E.ptb.ifi)
+nframes_tot = E.ptb.movie.duration*E.ptb.movie.fps;
+while nframes<floor(nframes_tot)
+
+% while (GetSecs()-t1)<(E.ptb.movie.duration-E.ptb.ifi)
 
     tex = Screen('GetMovieImage', E.ptb.win, E.ptb.movie.movie, P.movieblocking);
 
@@ -68,7 +71,7 @@ trialSummary = struct('movie_duration', time_elapsed,'nframes', nframes, ...
 % grey screen again
 Screen('FillRect', E.ptb.win, E.ptb.grey);
 vbl = Screen('Flip', E.ptb.win);
-WaitSecs('YieldSecs', P.timeInterTrial)
+WaitSecs('YieldSecs', P.timeInterTrial);
 
 
 if ~isfield(E, 'log')

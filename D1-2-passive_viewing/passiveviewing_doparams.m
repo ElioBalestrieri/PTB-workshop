@@ -4,11 +4,22 @@ function P = passiveviewing_doparams()
 P.timeFixCross = [1.750, 2.250]; % min-max jitter, in seconds
 P.timeFace = .5;
 
+% stim size (VA)
+P.stimVA.FIX_extent = 1;
+P.stimVA.FIX_thick  = .15;
+
 % only for debug
 P.debugRect = [0, 0, 960, 540];
 
+% screen size
+P.screenSize_m_XY = [344 193]; % fullscreen laptop; fullscreen office [528, 297]; 
+
+% subject distance from screen
+P.dist_subj = 600; % mm
+
+
 % load images as RGB matrices & assign them to their filenames in a P cell
-input_dir = '/home/balestrieri/Projects/PTB-workshop/stims/D1-2'; % remember to change for the current machine
+input_dir = '/home/elio/postDoc/PTB-workshop/stims/D1-2'; % remember to change for the current machine
 fulllist = dir(input_dir); filelist = {fulllist(~[fulllist.isdir]).name}';
 nImages = length(filelist); % length yields the number of entries along the longest dimension, use it cautiously with matrices...
 for iFace = 1:nImages
@@ -43,6 +54,7 @@ for iBatch = 1:P.nReps
     end
 
 end
+
 
 end
 

@@ -31,6 +31,20 @@ ptb.keys.ESC = KbName('ESCAPE');
 ptb.keys.SPACE = KbName('SPACE');
 
 
+% Open movie file and retrieve basic info about movie:
+[movie, movieduration, fps, ...
+ imgw, imgh, ~, ~, ...
+ hdrStaticMetaData] = Screen('OpenMovie', ptb.win, P.moviename);
+
+ptb.movie.movie = movie;
+ptb.movie.duration = movieduration;
+ptb.movie.fps = fps;
+ptb.movie.imgw = imgw;
+ptb.movie.imgh = imgh;
+ptb.movie.hdrStaticMetaData = hdrStaticMetaData;
+
+
+
 %% convert from visual angles to pixels
 % nice explanation at https://elvers.us/perception/visualAngle/va.html
 

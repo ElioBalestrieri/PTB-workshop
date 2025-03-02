@@ -18,11 +18,11 @@ P.movieblocking = 1;
 switch P.movietype
 
     case 1
-        P.moviename = '/home/balestrieri/Projects/PTB-workshop/stims/D2-1/montoya.mp4';
+        P.moviename = '/home/elio/postDoc/PTB-workshop/stims/D2-1/montoya.mp4';
     case 2
-        P.moviename = '/home/balestrieri/Projects/PTB-workshop/stims/D2-1/cat.mp4';
+        P.moviename = '/home/elio/postDoc/PTB-workshop/stims/D2-1/cat.mp4';
     otherwise
-        P.moviename = '/home/balestrieri/Projects/PTB-workshop/stims/D2-1/vid_scream -3db.avi';
+        P.moviename = '/home/elio/postDoc/PTB-workshop/stims/D2-1/vid_scream -3db.avi';
         
 
 end
