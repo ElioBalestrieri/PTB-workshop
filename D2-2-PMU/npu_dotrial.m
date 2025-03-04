@@ -126,6 +126,8 @@ switch P.events(E.iTrl).event
                           'fps', fps, ...
                           'nframes_movie', nframes);        
 
+end
+                      
 if ~isfield(E, 'log')
     E.log = trialSummary;
 else

@@ -50,7 +50,7 @@ Screen('BlendFunction', win, 'GL_SRC_ALPHA', 'GL_ONE_MINUS_SRC_ALPHA');
 
 %% keyboard
 
- KbName('UnifyKeyNames'); % against OS incompatibilities
+KbName('UnifyKeyNames'); % against OS incompatibilities
 
 
 % stop getting input from keyboard
